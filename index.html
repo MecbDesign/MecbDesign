@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Miguel Camacho - Diseñador gráfico y desarrollador web. Especializado en diseño UI/UX, motion graphics y desarrollo web creativo.">
+  <meta name="keywords" content="diseño gráfico, UI/UX, motion graphics, desarrollo web, Adobe Creative Suite, Miguel Camacho">
+  <meta name="author" content="Miguel Camacho">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mecbdesign.com/">
+  <meta property="og:title" content="MecbDesign - Miguel Camacho">
+  <meta property="og:description" content="Diseñador gráfico y desarrollador web creativo">
+  <meta property="og:image" content="img/logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://mecbdesign.com/">
+  <meta property="twitter:title" content="MecbDesign - Miguel Camacho">
+  <meta property="twitter:description" content="Diseñador gráfico y desarrollador web creativo">
+  <meta property="twitter:image" content="img/logo.png">
+
+  <title>MecbDesign - Miguel Camacho | Diseñador Gráfico & Desarrollador Web</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Decalotype&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="img/fondo.jpg" as="image">
+  <link rel="preload" href="fonts/Decalotype-Regular.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+
+<body>
+  <!-- Loading screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-spinner"></div>
+    <p>Cargando...</p>
+  </div>
+
+  <header>
+    <div class="contenedor-header">
+      <img src="img/logo.png" alt="Logo de MecbDesign" class="logo">
+
+      <nav class="nav-principal" id="nav" role="navigation" aria-label="Navegación principal">
+        <a href="#sobremi" aria-label="Ir a sección Sobre mí">Sobre mí</a>
+        <a href="#habilidades" aria-label="Ir a sección Habilidades">Habilidades</a>
+        <a href="#proyectos" aria-label="Ir a sección Proyectos">Proyectos</a>
+        <a href="#galeria" aria-label="Ir a sección Galería">Galería</a>
+        <a href="#contacto" aria-label="Ir a sección Contacto">Contacto</a>
+      </nav>
+
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main role="main">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-greeting">¡Hola, soy</span>
+          <span class="hero-name">Miguel Camacho!</span>
+        </h1>
+        <p class="hero-subtitle">Diseñador gráfico y desarrollador web creativo</p>
+        <div class="hero-buttons">
+          <a href="#sobremi" class="btn-primary">Conoce mi trabajo</a>
+          <a href="docs/cv-mecbdesign.jpg" download class="btn-secondary">
+            <span class="btn-icon">📄</span>
+            Descargar CV
+          </a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- Sobre mí Section -->
+    <section id="sobremi" class="fade-in seccion">
+      <div class="container">
+        <div class="bloque-titulo">
+          <h2>Sobre mí</h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p>Soy un diseñador gráfico apasionado por crear experiencias visuales memorables. Mi enfoque combina creatividad, funcionalidad y atención al detalle para desarrollar soluciones que conecten con las audiencias.</p>
+            <p>Actualmente estoy expandiendo mis habilidades hacia el desarrollo web, buscando llevar mis ideas creativas al siguiente nivel y crear experiencias digitales únicas.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number">4+</span>
+              <span class="stat-label">Años de experiencia</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Proyectos completados</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Satisfacción del cliente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Section -->
+    <section id="habilidades" class="fade-in seccion">
+      <div class="container">
+        <div class="bloque-titulo">
+          <h2>Mis habilidades</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="ui-ux">
+            <div class="skill-icon">🎨</div>
+            <h3>Diseño UI/UX</h3>
+            <p>Interfaces intuitivas y experiencias de usuario excepcionales</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="90"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-skill="graphic">
+            <div class="skill-icon">🧠</div>
+            <h3>Diseño Gráfico</h3>
+            <p>Creación de identidades visuales y material promocional</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="95"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-skill="social">
+            <div class="skill-icon">📲</div>
+            <h3>Social Media</h3>
+            <p>Contenido atractivo para redes sociales y marketing digital</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="85"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-skill="video">
+            <div class="skill-icon">🎞️</div>
+            <h3>Edición de Videos</h3>
+            <p>Producción y post-producción de contenido audiovisual</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="80"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-skill="motion">
+            <div class="skill-icon">⚡</div>
+            <h3>Motion Graphics</h3>
+            <p>Animaciones y efectos visuales dinámicos</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="75"></div>
+            </div>
+          </div>
+          
+          <div class="skill-card" data-skill="web">
+            <div class="skill-icon">💻</div>
+            <h3>Desarrollo Web</h3>
+            <p>Creación de sitios web modernos y responsivos</p>
+            <div class="skill-level">
+              <div class="skill-bar" data-level="70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Herramientas Section -->
+    <section id="proyectos" class="fade-in seccion">
+      <div class="container">
+        <div class="bloque-titulo">
+          <h2>Herramientas que domino</h2>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-card" data-tool="photoshop">
+            <div class="tool-header">
+              <img src="img/icons/photoshop.png" alt="Adobe Photoshop" class="tool-icon" loading="lazy">
+              <h3>Adobe Photoshop</h3>
+            </div>
+            <div class="tool-skills">
+              <span class="skill-tag">Montajes</span>
+              <span class="skill-tag">Collages</span>
+              <span class="skill-tag">Edición Fotográfica</span>
+              <span class="skill-tag">Pósters</span>
+            </div>
+            <div class="tool-progress">
+              <div class="progress-bar" data-progress="95"></div>
+            </div>
+          </div>
+
+          <div class="tool-card" data-tool="illustrator">
+            <div class="tool-header">
+              <img src="img/icons/illustrator.png" alt="Adobe Illustrator" class="tool-icon" loading="lazy">
+              <h3>Adobe Illustrator</h3>
+            </div>
+            <div class="tool-skills">
+              <span class="skill-tag">Diseños publicitarios</span>
+              <span class="skill-tag">Social media</span>
+              <span class="skill-tag">Diseño Gráfico</span>
+              <span class="skill-tag">Logotipos</span>
+            </div>
+            <div class="tool-progress">
+              <div class="progress-bar" data-progress="90"></div>
+            </div>
+          </div>
+
+          <div class="tool-card" data-tool="premiere">
+            <div class="tool-header">
+              <img src="img/icons/premierepro.png" alt="Adobe Premiere Pro" class="tool-icon" loading="lazy">
+              <h3>Adobe Premiere Pro</h3>
+            </div>
+            <div class="tool-skills">
+              <span class="skill-tag">Social media</span>
+              <span class="skill-tag">Podcasts</span>
+              <span class="skill-tag">Videos Cinematográficos</span>
+              <span class="skill-tag">Edición</span>
+            </div>
+            <div class="tool-progress">
+              <div class="progress-bar" data-progress="85"></div>
+            </div>
+          </div>
+
+          <div class="tool-card" data-tool="aftereffects">
+            <div class="tool-header">
+              <img src="img/icons/aftereffects.png" alt="Adobe After Effects" class="tool-icon" loading="lazy">
+              <h3>Adobe After Effects</h3>
+            </div>
+            <div class="tool-skills">
+              <span class="skill-tag">Animación</span>
+              <span class="skill-tag">Motion Graphics</span>
+              <span class="skill-tag">Efectos de Video</span>
+              <span class="skill-tag">Compositing</span>
+            </div>
+            <div class="tool-progress">
+              <div class="progress-bar" data-progress="80"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería Section -->
+    <section id="galeria" class="seccion">
+      <div class="container">
+        <div class="bloque-titulo">
+          <h2>Galería de Proyectos</h2>
+        </div>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-category="branding">
+            <h3>LeadroTech</h3>
+            <div class="slider" role="region" aria-label="Galería LeadroTech">
+              <button class="btn-prev" aria-label="Imagen anterior">←</button>
+              <div class="slider-track">
+                <img src="img/slider1/diseño1.jpg" alt="Diseño LeadroTech 1" loading="lazy">
+                <img src="img/slider1/diseño2.jpg" alt="Diseño LeadroTech 2" loading="lazy">
+                <img src="img/slider1/diseño3.jpg" alt="Diseño LeadroTech 3" loading="lazy">
+                <img src="img/slider1/diseño4.jpg" alt="Diseño LeadroTech 4" loading="lazy">
+              </div>
+              <button class="btn-next" aria-label="Siguiente imagen">→</button>
+              <div class="slider-dots" role="tablist"></div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="branding">
+            <h3>Roman Gimenez</h3>
+            <div class="slider" role="region" aria-label="Galería Roman Gimenez">
+              <button class="btn-prev" aria-label="Imagen anterior">←</button>
+              <div class="slider-track">
+                <img src="img/slider2/diseño1.jpg" alt="Diseño Roman Gimenez 1" loading="lazy">
+                <img src="img/slider2/diseño2.jpg" alt="Diseño Roman Gimenez 2" loading="lazy">
+                <img src="img/slider2/diseño3.jpg" alt="Diseño Roman Gimenez 3" loading="lazy">
+                <img src="img/slider2/diseño4.jpg" alt="Diseño Roman Gimenez 4" loading="lazy">
+              </div>
+              <button class="btn-next" aria-label="Siguiente imagen">→</button>
+              <div class="slider-dots" role="tablist"></div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="marketing">
+            <h3>Willian's House Market</h3>
+            <div class="slider" role="region" aria-label="Galería Willian's House Market">
+              <button class="btn-prev" aria-label="Imagen anterior">←</button>
+              <div class="slider-track">
+                <img src="img/slider3/diseño1.jpg" alt="Diseño Willian's House Market 1" loading="lazy">
+                <img src="img/slider3/diseño2.jpg" alt="Diseño Willian's House Market 2" loading="lazy">
+                <img src="img/slider3/diseño3.jpg" alt="Diseño Willian's House Market 3" loading="lazy">
+                <img src="img/slider3/diseño4.jpg" alt="Diseño Willian's House Market 4" loading="lazy">
+              </div>
+              <button class="btn-next" aria-label="Siguiente imagen">→</button>
+              <div class="slider-dots" role="tablist"></div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-category="ui-ux">
+            <h3>UI App Concept</h3>
+            <div class="slider" role="region" aria-label="Galería UI App Concept">
+              <button class="btn-prev" aria-label="Imagen anterior">←</button>
+              <div class="slider-track">
+                <img src="img/slider4/diseño1.jpg" alt="UI App Concept 1" loading="lazy">
+                <img src="img/slider4/diseño2.jpg" alt="UI App Concept 2" loading="lazy">
+                <img src="img/slider4/diseño3.jpg" alt="UI App Concept 3" loading="lazy">
+                <img src="img/slider4/diseño4.jpg" alt="UI App Concept 4" loading="lazy">
+              </div>
+              <button class="btn-next" aria-label="Siguiente imagen">→</button>
+              <div class="slider-dots" role="tablist"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="fade-in seccion">
+      <div class="container">
+        <div class="bloque-titulo">
+          <h2>¿Trabajamos juntos?</h2>
+        </div>
+        
+        <div class="contact-content">
+          <div class="contact-info">
+            <p class="contact-description">
+              ¿Tienes un proyecto en mente? Me encantaría escuchar sobre tu idea y ayudarte a hacerla realidad.
+            </p>
+            <div class="contact-email">
+              <span class="email-label">Email:</span>
+              <a href="mailto:itsmecbbroo@gmail.com" class="email-link">itsmecbbroo@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <h3>Sígueme en redes sociales</h3>
+            <div class="social-grid">
+              <a href="https://kuentro.ai" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Visitar Kuentro">
+                <span class="social-icon">💼</span>
+                <span class="social-name">Kuentro</span>
+              </a>
+              <a href="https://www.instagram.com/miguelcamacho_sw?igsh=MTV4ZmYwazNrM2NoMQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Seguir en Instagram">
+                <span class="social-icon">📸</span>
+                <span class="social-name">Instagram</span>
+              </a>
+              <a href="https://www.behance.net/mecbdesing" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ver portafolio en Behance">
+                <span class="social-icon">🎨</span>
+                <span class="social-name">Behance</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 MecbDesign - Miguel Camacho. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Volver arriba">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
