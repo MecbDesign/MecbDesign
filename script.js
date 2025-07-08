@@ -11,6 +11,51 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 1000);
 });
 
+// Manual de Identidad Modal
+function initializeManualModal() {
+  const manualBtn = document.getElementById('manual-btn');
+  const modal = document.getElementById('manual-modal');
+  const modalClose = document.getElementById('modal-close');
+
+  console.log('Manual modal elements:', { manualBtn, modal, modalClose });
+
+  if (!manualBtn || !modal || !modalClose) {
+    console.error('Manual modal elements not found');
+    return;
+  }
+
+  console.log('Manual modal elements found, setting up event listeners');
+
+  // Open modal
+  manualBtn.addEventListener('click', () => {
+    console.log('Manual modal button clicked');
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  });
+
+  // Close modal with close button
+  modalClose.addEventListener('click', () => {
+    modal.classList.remove('show');
+    document.body.style.overflow = ''; // Restore scrolling
+  });
+
+  // Close modal when clicking outside
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) {
+      modal.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Mobile Menu Toggle
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
@@ -263,7 +308,9 @@ function initializeParallax() {
 // Typing effect for hero title
 function initializeTypingEffect() {
   const heroName = document.querySelector('.hero-name');
-  if (heroName) {
+  const heroSection = document.querySelector('.hero-section');
+  
+  if (heroName && heroSection) {
     const text = heroName.textContent;
     heroName.textContent = '';
     
@@ -393,6 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeSkillCardEffects();
   initializeToolCardEffects();
   initializePortfolioFilter();
+  initializeManualModal();
 });
 
 // Performance optimization: Throttle scroll events

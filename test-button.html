@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Button</title>
+    <style>
+        :root {
+            --primary-color: #00ccff;
+            --text-light: #ffffff;
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            background: #190028;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--text-light);
+            border: 2px solid transparent;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Botones</h1>
+    
+    <a href="#" class="btn-primary">Botón Primario</a>
+    <button class="btn-secondary">Botón Secundario</button>
+    
+    <br><br>
+    
+    <a href="#" class="btn-primary">📄 Conoce mi trabajo</a>
+    <button class="btn-secondary">
+        <span>📄</span>
+        Ver Manual De Identidad
+    </button>
+</body>
+</html> 
