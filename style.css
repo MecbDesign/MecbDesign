@@ -668,6 +668,7 @@ header.scrolled {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  align-items: center; /* Centra los enlaces horizontalmente */
 }
 
 .social-link {
@@ -681,6 +682,9 @@ header.scrolled {
   color: var(--text-light);
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  justify-content: center; /* Centra el contenido dentro del rectángulo */
+  min-width: 260px;
+  max-width: 100%;
 }
 
 .social-link:hover {
@@ -691,6 +695,16 @@ header.scrolled {
 
 .social-icon {
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Ajuste para los logos de redes sociales */
+.social-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  display: block;
 }
 
 .social-name {
