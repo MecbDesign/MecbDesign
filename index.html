@@ -442,6 +442,28 @@
     </div>
   </div>
 
+  <!-- Modal de Vista Previa de Imágenes -->
+  <div id="image-modal" class="modal image-modal">
+    <div class="modal-content image-modal-content">
+      <div class="modal-header">
+        <h2 id="image-modal-title">Vista Previa</h2>
+        <button class="modal-close" id="image-modal-close" aria-label="Cerrar vista previa">×</button>
+      </div>
+      <div class="modal-body image-modal-body">
+        <div class="image-container">
+          <img id="modal-image" src="" alt="Vista previa de imagen" class="modal-image">
+          <div class="image-navigation">
+            <button class="nav-btn prev-btn" id="modal-prev" aria-label="Imagen anterior">‹</button>
+            <button class="nav-btn next-btn" id="modal-next" aria-label="Siguiente imagen">›</button>
+          </div>
+          <div class="image-counter">
+            <span id="current-image">1</span> / <span id="total-images">1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

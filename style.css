@@ -553,6 +553,12 @@ header.scrolled {
   max-height: 400px;
   object-fit: contain;
   border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.slider-track img:hover {
+  transform: scale(1.05);
 }
 
 .btn-prev, .btn-next {
@@ -839,6 +845,100 @@ header.scrolled {
   background: white;
 }
 
+/* Modal de Vista Previa de Imágenes */
+.image-modal .modal-content {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: var(--darker-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-modal .modal-header {
+  padding: 20px 30px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.image-modal .modal-body {
+  padding: 0;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  max-height: 70vh;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 0 0 15px 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal-image:hover {
+  transform: scale(1.02);
+}
+
+.image-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.nav-btn {
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--text-light);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.image-counter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text-light);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 /* Button styles for modal trigger */
 .btn-secondary {
   cursor: pointer;
@@ -958,6 +1058,33 @@ header.scrolled {
     height: 60vh;
     min-height: 400px;
   }
+
+  /* Modal de vista previa responsivo */
+  .image-modal .modal-content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .image-container {
+    min-height: 300px;
+    max-height: 60vh;
+  }
+
+  .modal-image {
+    max-height: 60vh;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .image-counter {
+    bottom: 15px;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1038,6 +1165,33 @@ header.scrolled {
   .manual-preview {
     height: 50vh;
     min-height: 300px;
+  }
+
+  /* Modal de vista previa para móviles */
+  .image-modal .modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+  }
+
+  .image-container {
+    min-height: 250px;
+    max-height: 50vh;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+  }
+
+  .nav-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .image-counter {
+    bottom: 10px;
+    padding: 4px 8px;
+    font-size: 0.7rem;
   }
 }
 

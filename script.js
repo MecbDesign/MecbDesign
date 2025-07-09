@@ -427,6 +427,120 @@ function initializePortfolioFilter() {
   });
 }
 
+// Modal de Vista Previa de Imágenes
+function initializeImageModal() {
+  const imageModal = document.getElementById('image-modal');
+  const modalImage = document.getElementById('modal-image');
+  const modalTitle = document.getElementById('image-modal-title');
+  const modalClose = document.getElementById('image-modal-close');
+  const modalPrev = document.getElementById('modal-prev');
+  const modalNext = document.getElementById('modal-next');
+  const currentImageSpan = document.getElementById('current-image');
+  const totalImagesSpan = document.getElementById('total-images');
+
+  let currentImages = [];
+  let currentIndex = 0;
+  let currentGallery = '';
+
+  // Función para abrir el modal con una imagen específica
+  function openImageModal(imageSrc, imageAlt, galleryImages, imageIndex, galleryName) {
+    currentImages = galleryImages;
+    currentIndex = imageIndex;
+    currentGallery = galleryName;
+    
+    modalImage.src = imageSrc;
+    modalImage.alt = imageAlt;
+    modalTitle.textContent = galleryName;
+    currentImageSpan.textContent = currentIndex + 1;
+    totalImagesSpan.textContent = currentImages.length;
+    
+    updateNavigationButtons();
+    
+    imageModal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Función para actualizar los botones de navegación
+  function updateNavigationButtons() {
+    modalPrev.disabled = currentIndex === 0;
+    modalNext.disabled = currentIndex === currentImages.length - 1;
+  }
+
+  // Función para ir a la imagen anterior
+  function goToPreviousImage() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      const image = currentImages[currentIndex];
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      currentImageSpan.textContent = currentIndex + 1;
+      updateNavigationButtons();
+    }
+  }
+
+  // Función para ir a la siguiente imagen
+  function goToNextImage() {
+    if (currentIndex < currentImages.length - 1) {
+      currentIndex++;
+      const image = currentImages[currentIndex];
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      currentImageSpan.textContent = currentIndex + 1;
+      updateNavigationButtons();
+    }
+  }
+
+  // Función para cerrar el modal
+  function closeImageModal() {
+    imageModal.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  // Event listeners para el modal
+  modalClose.addEventListener('click', closeImageModal);
+  modalPrev.addEventListener('click', goToPreviousImage);
+  modalNext.addEventListener('click', goToNextImage);
+
+  // Cerrar modal al hacer clic fuera de él
+  imageModal.addEventListener('click', (e) => {
+    if (e.target === imageModal) {
+      closeImageModal();
+    }
+  });
+
+  // Navegación con teclado
+  document.addEventListener('keydown', (e) => {
+    if (!imageModal.classList.contains('show')) return;
+    
+    switch (e.key) {
+      case 'Escape':
+        closeImageModal();
+        break;
+      case 'ArrowLeft':
+        goToPreviousImage();
+        break;
+      case 'ArrowRight':
+        goToNextImage();
+        break;
+    }
+  });
+
+  // Agregar event listeners a todas las imágenes de los sliders
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  portfolioItems.forEach(item => {
+    const galleryName = item.querySelector('h3').textContent;
+    const sliderTrack = item.querySelector('.slider-track');
+    const images = sliderTrack.querySelectorAll('img');
+    
+    images.forEach((image, index) => {
+      image.addEventListener('click', () => {
+        openImageModal(image.src, image.alt, Array.from(images), index, galleryName);
+      });
+    });
+  });
+}
+
 // Initialize all functions when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   initializeSliders();
@@ -441,6 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initializeToolCardEffects();
   initializePortfolioFilter();
   initializeManualModal();
+  initializeImageModal();
 });
 
 // Performance optimization: Throttle scroll events
